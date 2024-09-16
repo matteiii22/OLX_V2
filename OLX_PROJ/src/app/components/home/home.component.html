@@ -1,0 +1,28 @@
+<!-- Header Code -->
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" class="account-icon">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li>
+          <a href="#" (click)="loginOverlay.toggleOverlay()">
+            <img src="assets/my-account.png" alt="My Account" class="account-icon-nav">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Include the login overlay -->
+<app-login-overlay #loginOverlay></app-login-overlay>
+
+<!-- Home Content -->
+<div class="home-content">
+  <h1>Welcome to the Classified Ads Platform</h1>
+  <!-- Additional home page content here -->
+</div>

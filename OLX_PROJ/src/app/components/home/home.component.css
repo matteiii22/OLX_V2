@@ -1,0 +1,47 @@
+/* Styling for the header */
+.header {
+  background-color: #1976d2; /* Blue color */
+  padding: 20px 40px; /* Increased padding for bigger header */
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the logo on the left */
+.logo img {
+  width: 60px; /* Increased size for logo */
+  height: 60px;
+  background-color: transparent; /* Ensure background is transparent */
+  border: none; /* Ensure no border */
+  padding: 0; /* Remove any extra padding */
+
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the navigation icons */
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a img {
+  width: 50px; /* Size of the account icon in navigation */
+  height: 50px;
+  vertical-align: middle;
+}
+
+/* Home content styling */
+.home-content {
+  padding: 20px;
+  text-align: center;
+}
