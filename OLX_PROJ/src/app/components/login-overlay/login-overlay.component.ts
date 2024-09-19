@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login-overlay',
@@ -25,11 +26,22 @@ export class LoginOverlayComponent {
 
   // Handle login action
   onLogin() {
-    if (this.username === 'user' && this.password === 'password') { // Example credentials
-      this.guestSession = false; // Set guest session to false after login
+    if (this.username === 'user' && this.password === 'password') {
+      // Successful login
       this.toggleOverlay(); // Close the overlay after login
+      Swal.fire({
+        icon: 'success',
+        title: 'Login successful!',
+        text: 'Welcome, you are now logged in.'
+      });
     } else {
-      alert('Invalid credentials');
+      // Invalid credentials alert
+      Swal.fire({
+        icon: 'error',
+        title: 'Login failed!',
+        text: 'Invalid credentials. Please try again.',
+        confirmButtonText: 'OK'
+      });
     }
   }
 }
