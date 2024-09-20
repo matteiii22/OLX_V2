@@ -1,45 +1,61 @@
-/* Overlay for login modal */
+/* Login overlay */
 .login-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3; /* Ensures it's above everything else */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
 }
 
-/* Login form container */
-.login-form {
+/* Login content inside the overlay */
+.login-content {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  max-width: 300px;
-  width: 100%;
-  position: relative;
+  width: 350px; /* Adjust the width for the login form */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow around the form */
+  position: relative; /* For close button positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Login form header */
+/* Close button in the overlay */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form elements inside login */
 .login-form h2 {
   margin-bottom: 20px;
   font-size: 1.5rem;
+  color: #333;
 }
 
-/* Input field group */
 .form-group {
   margin-bottom: 15px;
-  text-align: left;
+  width: 100%;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #333;
 }
 
 .form-group input {
@@ -48,9 +64,15 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
-/* Login button */
+.form-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Login button styling */
 .login-button {
   background-color: #3498db;
   color: white;
@@ -61,6 +83,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .login-button:hover {
@@ -71,41 +95,18 @@
 .login-button:active {
   background-color: #20639b;
 }
-
-/* Continue button */
-.continue-button {
-  background-color: #6c757d; /* Grey background */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 10px; /* Space between buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.continue-button:hover {
-  background-color: #5a6268;
-  transform: scale(1.05);
+.login-button, .cancel-button {
+  width: 48%; /* Ensures both buttons take equal space with some gap */
 }
 
-.continue-button:active {
-  background-color: #43484d;
-}
-
-/* Close button inside login modal */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  color: #333;
-}
 .cancel-button {
-  background-color: #e74c3c;
+  background-color: #e74c3c; /* Red color for cancel */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -114,6 +115,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .cancel-button:hover {
@@ -124,3 +127,5 @@
 .cancel-button:active {
   background-color: #a93226;
 }
+
+
